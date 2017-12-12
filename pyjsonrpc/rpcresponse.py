@@ -20,7 +20,7 @@ class Response(Bunch):
             """
             :param code: Error code
             :param message: Error message
-            :param data: Additional error informations
+            :param data: Additional error information
             """
 
             Bunch.__init__(self)
@@ -29,7 +29,7 @@ class Response(Bunch):
             self.data = data
 
         def __len__(self):
-            return 1 if self.code else 0
+            return 0 if (self.code is None) or (self.message is None) else 1
 
 
     def __init__(
